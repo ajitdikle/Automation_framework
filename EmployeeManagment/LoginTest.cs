@@ -35,11 +35,11 @@ namespace EmployeeManagment
             dataset1[1] = "john123";
             dataset1[2] = "invalid credentials";
 
-            string[] dataset2 = new string[2];
+            string[] dataset2 = new string[3];
             dataset2[0] = "peter";
             dataset2[1] = "peter123";
             dataset1[2] = "invalid credentials";
-            string[] dataset3 = new string[2];
+            string[] dataset3 = new string[3];
             dataset3[0] = "saul";
             dataset3[1] = "saul123";
             dataset1[2] = "invalid credentials";
