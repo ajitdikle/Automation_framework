@@ -19,10 +19,22 @@ namespace EmployeeManagment
 
             IXLRange range = sheet.RangeUsed();
 
-            string value = range.Cell(2,2).GetString();
-            Console.WriteLine(value);
+            //string value = range.Cell(2,2).GetString();
+            //Console.WriteLine(value);
         
+            for (int r =1; r<=3; r++)
+            {
+                for (int c =1; c<=3; c++)
+                {
+                    string value = range.Cell(r, c).GetString();
+                    Console.WriteLine(value);
+
+                }
+            }                
+
+                        book.Dispose();
+            
         }
 
-    }
+    }       
 }
