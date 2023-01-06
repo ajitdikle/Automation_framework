@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Firefox;
 
 namespace EmployeeManagment.Base
 {
@@ -16,7 +18,20 @@ namespace EmployeeManagment.Base
         public void BeforeMethod()
         {
 
-            driver = new ChromeDriver();
+            string browserName = "edge";
+
+            if (browserName.ToLower().Equals("edge"))
+            {
+                driver = new EdgeDriver();
+            }
+            else if (browserName.ToLower().Equals("firefox"))
+            {
+                driver = new FirefoxDriver();
+            }
+            else
+            {
+                driver = new ChromeDriver();
+            }
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
             driver.Url = "https://opensource-demo.orangehrmlive.com/";

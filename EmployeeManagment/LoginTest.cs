@@ -31,7 +31,7 @@ namespace EmployeeManagment
 
 
 
-        [Test, TestCaseSource(typeof(DataSource), nameof(DataSource.InvalidLoginData))]
+        [Test, TestCaseSource(typeof(DataSource), nameof(DataSource.InvalidLoginData2))]
 
         
         public void InvalidLoginTest(string username, string password, string expectedError)

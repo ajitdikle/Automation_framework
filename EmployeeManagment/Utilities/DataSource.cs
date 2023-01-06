@@ -36,8 +36,8 @@ namespace EmployeeManagment.Utilities
         }
 
 
-       
-public static object[] EmployeeData()
+
+        public static object[] EmployeeData()
         {
 
             string[] dataset1 = new string[6];
@@ -66,6 +66,19 @@ public static object[] EmployeeData()
             return alldataset;
         }
 
+        public static object[] InvalidLoginData2()
+        {
+            object[] data = ExcelUtils.GetSheetIntoObjectArray
 
+                (@"C:\Users\ajitd\Desktop\CSharp\AutomationFramework\EmployeeManagment\TestData\Orange_data.xlsx", "InvalidLoginData");
+
+            return data;
+        }
+
+        public static object[] AddValidEmployeeData2()
+        {
+            object[] data = ExcelUtils.GetSheetIntoObjectArray(@"C:\Users\ajitd\Desktop\CSharp\AutomationFramework\EmployeeManagment\TestData\Orange_data.xlsx", "AddValidEmployee");
+            return data;
+        }
     }
 }
