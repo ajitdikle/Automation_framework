@@ -1,4 +1,5 @@
 ﻿using EmployeeManagment.Base;
+using EmployeeManagment.Pages;
 using EmployeeManagment.Utilities;
 using OpenQA.Selenium;
 using System;
@@ -15,8 +16,15 @@ namespace EmployeeManagment
         [Test]
         public void ValidLoginTest()
         {
-            driver.FindElement(By.Name("username")).SendKeys("Admin");
-            driver.FindElement(By.Name("password")).SendKeys("admin123");
+            LoginPage loginpage = new LoginPage(driver);
+
+            loginpage.EnterUsername("Admin");
+            loginpage.EnterPassword("admin123");
+
+
+
+
+            
             driver.FindElement(By.XPath("//button[@type = 'submit']")).Click();
 
             string actualUrl = driver.Url;
@@ -36,9 +44,11 @@ namespace EmployeeManagment
         
         public void InvalidLoginTest(string username, string password, string expectedError)
         {
+            LoginPage loginpage = new LoginPage(driver);
 
-            driver.FindElement(By.Name("username")).SendKeys(username);
-            driver.FindElement(By.Name("password")).SendKeys(password);
+            loginpage.EnterUsername("john");
+            loginpage.EnterPassword("a123");
+           
             driver.FindElement(By.XPath("//button[@type = 'submit']")).Click();
 
             string actualError = driver.FindElement(By.XPath("//p[contains(normalize-space(),'cred')]")).Text;
